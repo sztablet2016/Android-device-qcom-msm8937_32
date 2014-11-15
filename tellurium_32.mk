@@ -1,25 +1,25 @@
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8916_32/overlay
+DEVICE_PACKAGE_OVERLAYS := device/qcom/tellurium_32/overlay
 
 TARGET_USES_QCOM_BSP := true
-ifeq ($(TARGET_PRODUCT),msm8916_32)
+ifeq ($(TARGET_PRODUCT),tellurium_32)
 TARGET_USES_QCA_NFC := other
 endif
 
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
-# media_profiles and media_codecs xmls for 8916
+# media_profiles and media_codecs xmls for tellurium
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/qcom/msm8916_32/media/media_profiles_8916.xml:system/etc/media_profiles.xml \
-                      device/qcom/msm8916_32/media/media_codecs_8916.xml:system/etc/media_codecs.xml
+PRODUCT_COPY_FILES += device/qcom/tellurium_32/media/media_profiles_8916.xml:system/etc/media_profiles.xml \
+                      device/qcom/tellurium_32/media/media_codecs_8916.xml:system/etc/media_codecs.xml
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
        dalvik.vm.heapgrowthlimit=128m
 $(call inherit-product, device/qcom/common/common.mk)
 
-PRODUCT_NAME := msm8916_32
-PRODUCT_DEVICE := msm8916_32
+PRODUCT_NAME := tellurium_32
+PRODUCT_DEVICE := tellurium_32
 
 PRODUCT_BOOT_JARS += \
            qcmediaplayer \
@@ -30,19 +30,19 @@ PRODUCT_BOOT_JARS += \
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8916_32/audio_policy.conf:system/etc/audio_policy.conf \
-    device/qcom/msm8916_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/qcom/msm8916_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    device/qcom/msm8916_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-    device/qcom/msm8916_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-    device/qcom/msm8916_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
-    device/qcom/msm8916_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
-    device/qcom/msm8916_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
-    device/qcom/msm8916_32/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msm8916_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/qcom/msm8916_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
-    device/qcom/msm8916_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    device/qcom/msm8916_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml
+    device/qcom/tellurium_32/audio_policy.conf:system/etc/audio_policy.conf \
+    device/qcom/tellurium_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/qcom/tellurium_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
+    device/qcom/tellurium_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
+    device/qcom/tellurium_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
+    device/qcom/tellurium_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
+    device/qcom/tellurium_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
+    device/qcom/tellurium_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
+    device/qcom/tellurium_32/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/qcom/tellurium_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/qcom/tellurium_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
+    device/qcom/tellurium_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    device/qcom/tellurium_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml
 
 # ANT+ stack
 PRODUCT_PACKAGES += \
@@ -86,7 +86,7 @@ PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
 endif # TARGET_USES_QCA_NFC
 
-# Feature definition files for msm8916
+# Feature definition files for tellurium
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
@@ -110,12 +110,12 @@ PRODUCT_PACKAGES += wcnss_service
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8916_32/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
+    device/qcom/tellurium_32/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8916_32/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/qcom/msm8916_32/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
+    device/qcom/tellurium_32/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/qcom/tellurium_32/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
