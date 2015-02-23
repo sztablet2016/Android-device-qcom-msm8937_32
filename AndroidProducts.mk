@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/tellurium_32.mk
+	$(LOCAL_DIR)/msm8952_32.mk
