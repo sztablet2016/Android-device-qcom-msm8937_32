@@ -23,7 +23,7 @@ endif
 
 BOARD_USES_GENERIC_AUDIO := true
 
--include $(QCPATH)/common/tellurium_32/BoardConfigVendor.mk
+-include $(QCPATH)/common/msm8952_32/BoardConfigVendor.mk
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
 # to get rid of compilation error.
@@ -45,8 +45,8 @@ TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_HARDWARE_3D := false
-TARGET_BOARD_PLATFORM := tellurium
-TARGET_BOOTLOADER_BOARD_NAME := tellurium
+TARGET_BOARD_PLATFORM := msm8952
+TARGET_BOOTLOADER_BOARD_NAME := msm8952
 
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
@@ -76,7 +76,7 @@ BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive lpm_levels.sleep_disabled=1
 BOARD_KERNEL_SEPARATED_DT := true
 
-BOARD_EGL_CFG := device/qcom/tellurium_32/egl.cfg
+BOARD_EGL_CFG := device/qcom/msm8952_32/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x02000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x02000000
@@ -103,7 +103,7 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
-#Add support for firmare upgrade on tellurium
+#Add support for firmare upgrade on msm8952
 HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE := true
 
 #add suffix variable to uniquely identify the board
