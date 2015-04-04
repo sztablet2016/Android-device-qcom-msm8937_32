@@ -52,6 +52,8 @@
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
     <ctl name="SPK DAC Switch" value="0" />
+    <ctl name="WSA Spk Switch" value="ZERO" />
+    <ctl name="SpkrMono WSA_RDAC" value="ZERO" />
     <ctl name="EAR PA Gain" value="POS_6_DB" />
     <ctl name="Speaker Boost" value="ENABLE" />
     <ctl name="EAR PA Gain" value="POS_1P5_DB" />
@@ -255,8 +257,56 @@
         <path name="compress-offload-playback" />
     </path>
 
+    <path name="compress-offload-playback2">
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia7" value="1" />
+    </path>
+
+    <path name="compress-offload-playback2 bt-sco">
+        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia7" value="1" />
+    </path>
+
     <path name="compress-offload-playback transmission-fm">
         <ctl name="INTERNAL_FM_RX Audio Mixer MultiMedia4" value="1" />
+    </path>
+
+    <path name="compress-offload-playback3">
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-offload-playback3 bt-sco">
+        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-offload-playback4">
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia11" value="1" />
+    </path>
+
+    <path name="compress-offload-playback4 bt-sco">
+        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia11" value="1" />
+    </path>
+
+    <path name="compress-offload-playback5">
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia12" value="1" />
+    </path>
+
+    <path name="compress-offload-playback5 bt-sco">
+        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia12" value="1" />
+    </path>
+
+    <path name="compress-offload-playback6">
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia13" value="1" />
+    </path>
+
+    <path name="compress-offload-playback6 bt-sco">
+        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia13" value="1" />
+    </path>
+
+    <path name="compress-offload-playback7">
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia14" value="1" />
+    </path>
+
+    <path name="compress-offload-playback7 bt-sco">
+        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
     <path name="audio-record">
@@ -483,7 +533,15 @@
         <ctl name="SPK DAC Switch" value="1" />
     </path>
 
-    <path name="speaker-mic">
+    <path name="wsa-speaker">
+        <ctl name="RX1 MIX1 INP1" value="RX1" />
+        <ctl name="RDAC2 MUX" value="RX1" />
+        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="WSA Spk Switch" value="WSA" />
+        <ctl name="SpkrMono WSA_RDAC" value="Switch" />
+   </path>
+
+   <path name="speaker-mic">
         <path name="adc1" />
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
@@ -544,6 +602,10 @@
 
     <path name="voice-speaker">
         <path name="speaker" />
+    </path>
+
+    <path name="wsa-voice-speaker">
+        <path name="wsa-speaker" />
     </path>
 
     <path name="voice-speaker-mic">
