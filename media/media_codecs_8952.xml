@@ -180,6 +180,8 @@ _________________________________________________________________
         </MediaCodec>
         <MediaCodec name="OMX.qcom.audio.decoder.amrwbplus" type="audio/amr-wb-plus" >
         </MediaCodec>
+        <MediaCodec name="OMX.qcom.audio.decoder.alac" type="audio/alac" >
+        </MediaCodec>
         <!-- Audio Software  -->
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.qcom.audio.decoder.Qcelp13" type="audio/qcelp" >
