@@ -56,8 +56,8 @@ media.swhevccodectype=0
 mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
-#codecs: AVI AC3 ASF AAC QCP DTS 3G2 MP2TS FLAC AIFF
-mm.enable.qcom_parser=430707
+#codecs: AVI AC3 ASF AAC QCP DTS 3G2 MP2TS FLAC AIFF APE
+mm.enable.qcom_parser=954995
 
 # Default to AwesomePlayer
 media.stagefright.use-awesome=false
