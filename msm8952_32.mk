@@ -8,6 +8,9 @@ endif
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
+#QTIC flag
+-include $(QCPATH)/common/config/qtic-config.mk
+
 # media_profiles and media_codecs xmls for msm8952
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/qcom/msm8952_32/media/media_profiles_8952.xml:system/etc/media_profiles.xml \
@@ -20,6 +23,14 @@ $(call inherit-product, device/qcom/common/common.mk)
 
 PRODUCT_NAME := msm8952_32
 PRODUCT_DEVICE := msm8952_32
+
+ifeq ($(strip $(TARGET_USES_QTIC)),true)
+# font rendering engine feature switch
+-include $(QCPATH)/common/config/rendering-engine.mk
+ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
+    MULTI_LANG_ENGINE := REVERIE
+endif
+endif
 
 PRODUCT_BOOT_JARS += \
            qcmediaplayer \
@@ -120,6 +131,7 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8952_32/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
     device/qcom/msm8952_32/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat
 
+
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf
@@ -128,3 +140,13 @@ PRODUCT_PACKAGES += \
 AntHalService \
 libantradio \
 antradio_app
+
+# Defined the locales
+PRODUCT_LOCALES += th_TH vi_VN tl_PH hi_IN ar_EG ru_RU tr_TR pt_BR bn_IN mr_IN ta_IN te_IN zh_HK \
+        in_ID my_MM km_KH sw_KE uk_UA pl_PL sr_RS sl_SI fa_IR kn_IN ml_IN ur_IN gu_IN or_IN
+
+# Add the overlay path
+ifeq ($(strip $(TARGET_USES_QTIC)),true)
+PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res-overlay \
+        $(PRODUCT_PACKAGE_OVERLAYS)
+endif
