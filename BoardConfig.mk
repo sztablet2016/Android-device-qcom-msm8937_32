@@ -114,3 +114,6 @@ TARGET_LDPRELOAD := libNimsWrap.so
 
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
+
+# Enable sensor multi HAL
+USE_SENSOR_MULTI_HAL := true
