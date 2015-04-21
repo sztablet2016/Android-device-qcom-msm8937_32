@@ -155,3 +155,6 @@ persist.qfp=false
 
 #property to enable DS2 dap
 audio.dolby.ds2.enabled=true
+#min/max cpu in core control
+ro.core_ctl_min_cpu=2
+ro.core_ctl_max_cpu=4
