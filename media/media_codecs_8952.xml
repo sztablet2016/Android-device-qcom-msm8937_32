@@ -182,6 +182,8 @@ _________________________________________________________________
         </MediaCodec>
         <MediaCodec name="OMX.qcom.audio.decoder.alac" type="audio/alac" >
         </MediaCodec>
+        <MediaCodec name="OMX.qcom.audio.decoder.ape" type="audio/x-ape" >
+        </MediaCodec>
         <!-- Audio Software  -->
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.qcom.audio.decoder.Qcelp13" type="audio/qcelp" >
