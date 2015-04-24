@@ -1,4 +1,4 @@
-# Copyright (c) 2013, The Linux Foundation. All rights reserved.
+# Copyright (c) 2015, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,13 +24,29 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
 
-#device         mount point      fstype        [device2] [length=]
+#################### RECOVERY DATA PARTITION FOR CARRIER ###################
+service carrier_switcher /system/bin/sh /system/vendor/speccfg/switch_spec.sh
+    user root
+    group root
+    disabled
+    oneshot
 
-/dev/block/bootdevice/by-name/system       /system         ext4    ro,barrier=1                                                    wait
-/dev/block/bootdevice/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
-/dev/block/bootdevice/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check,length=-16384
-/dev/block/mmcblk1p1                       /sdcard         vfat    nosuid,nodev,barrier=1,data=ordered,nodelalloc                  wait
-/dev/block/bootdevice/by-name/boot         /boot           emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/recovery     /recovery       emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/misc         /misc           emmc    defaults                                                        defaults
+on post-fs-data
+    start carrier_switcher
+    wait /data/switch_spec
+
+################################ CMCC APP ##################################
+# backupAppData
+service backupAppData /system/bin/sh /system/vendor/bin/backupAppData.sh
+    seclabel u:r:backup_service:s0
+    disabled
+    oneshot
+
+# recoverAppData
+service recoverAppData /system/bin/sh /system/vendor/bin/recoverAppData.sh
+    seclabel u:r:backup_service:s0
+    disabled
+    oneshot
