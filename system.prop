@@ -162,3 +162,6 @@ audio.dolby.ds2.enabled=true
 #min/max cpu in core control
 ro.core_ctl_min_cpu=2
 ro.core_ctl_max_cpu=4
+
+#HWUI properties
+ro.hwui.text_large_cache_height=2048
