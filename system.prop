@@ -169,3 +169,8 @@ ro.core_ctl_max_cpu=4
 
 #HWUI properties
 ro.hwui.text_large_cache_height=2048
+
+#Enable B service adj transition by default
+ro.sys.fw.bservice_enable=true
+ro.sys.fw.bservice_limit=5
+ro.sys.fw.bservice_age=5000
