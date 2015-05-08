@@ -119,7 +119,8 @@ PRODUCT_PACKAGES += fstab.qcom
 
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
-    libqcompostprocbundle
+    libqcompostprocbundle \
+    libqcomvoiceprocessing
 
 #OEM Services library
 PRODUCT_PACKAGES += oem-services
