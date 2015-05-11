@@ -39,13 +39,14 @@ ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
 endif
 endif
 
-PRODUCT_BOOT_JARS += \
-           qcmediaplayer \
-           WfdCommon \
-           oem-services \
-           qcom.fmradio \
-           org.codeaurora.Performance \
-           tcmiface
+PRODUCT_BOOT_JARS += qcmediaplayer \
+                     vcard \
+                     tcmiface
+ifneq ($(strip $(QCPATH)),)
+    PRODUCT_BOOT_JARS += qcom.fmradio
+    PRODUCT_BOOT_JARS += WfdCommon
+    PRODUCT_BOOT_JARS += oem-services
+endif
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
