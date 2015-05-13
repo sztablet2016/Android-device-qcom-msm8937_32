@@ -155,6 +155,9 @@ persist.hwc.enable_vds=1
 #selects CoreSight configuration to enable
 persist.debug.coresight.config=stm-events
 
+#property for vendor specific library
+ro.vendor.gt_library=libqti-gt.so
+
 #property to enable narrow search range for video encoding
 vidc.enc.narrow.searchrange=1
 
