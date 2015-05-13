@@ -1630,17 +1630,13 @@
     <path name="anc-handset">
         <ctl name="ANC Function" value="ON" />
         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" />
-        <ctl name="SLIM RX5 MUX" value="AIF2_PB" />
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
-        <ctl name="RX INT0_1 MIX1 INP1" value="RX5" />
         <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
-        <ctl name="AIF3_CAP Mixer SLIM TX3" value="1" />
-        <ctl name="SLIM TX3 MUX" value="RX_MIX_TX3" />
         <ctl name="RX0 Digital Volume" value="81" />
         <ctl name="ANC Slot" value="6" />
         <ctl name="ADC MUX6" value="DMIC" />
-        <ctl name="DMIC MUX6" value="DMIC4" />
+        <ctl name="DMIC MUX6" value="DMIC3" />
         <ctl name="ANC0 FB MUX" value="ANC_IN_EAR" />
         <ctl name="ANC EAR Enable Switch" value="1" />
     </path>
@@ -1782,17 +1778,9 @@
         <ctl name="ANC Function" value="ON" />
         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" />
         <ctl name="SLIM RX1 MUX" value="AIF_MIX1_PB" />
-        <ctl name="SLIM RX5 MUX" value="AIF2_PB" />
-        <ctl name="SLIM RX6 MUX" value="AIF2_PB" />
         <ctl name="SLIM_0_RX Channels" value="Two" />
         <ctl name="RX INT1_1 MIX1 INP0" value="RX0" />
         <ctl name="RX INT2_1 MIX1 INP0" value="RX1" />
-        <ctl name="RX INT1_1 MIX1 INP1" value="RX5" />
-        <ctl name="RX INT2_1 MIX1 INP1" value="RX6" />
-        <ctl name="AIF3_CAP Mixer SLIM TX3" value="1" />
-        <ctl name="AIF3_CAP Mixer SLIM TX5" value="1" />
-        <ctl name="SLIM TX3 MUX" value="RX_MIX_TX3" />
-        <ctl name="SLIM TX5 MUX" value="RX_MIX_TX5" />
         <ctl name="IIR0 Enable Band1" value="1" />
         <ctl name="IIR0 Enable Band2" value="1" />
         <ctl name="IIR0 Enable Band3" value="1" />
@@ -1822,17 +1810,9 @@
         <ctl name="ANC Function" value="ON" />
         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" />
         <ctl name="SLIM RX1 MUX" value="AIF_MIX1_PB" />
-        <ctl name="SLIM RX5 MUX" value="AIF2_PB" />
-        <ctl name="SLIM RX6 MUX" value="AIF2_PB" />
         <ctl name="SLIM_0_RX Channels" value="Two" />
         <ctl name="RX INT1_1 MIX1 INP0" value="RX0" />
         <ctl name="RX INT2_1 MIX1 INP0" value="RX1" />
-        <ctl name="RX INT1_1 MIX1 INP1" value="RX5" />
-        <ctl name="RX INT2_1 MIX1 INP1" value="RX6" />
-        <ctl name="AIF3_CAP Mixer SLIM TX3" value="1" />
-        <ctl name="AIF3_CAP Mixer SLIM TX5" value="1" />
-        <ctl name="SLIM TX3 MUX" value="RX_MIX_TX3" />
-        <ctl name="SLIM TX5 MUX" value="RX_MIX_TX5" />
         <ctl name="IIR0 Enable Band1" value="1" />
         <ctl name="IIR0 Enable Band2" value="1" />
         <ctl name="IIR0 Enable Band3" value="1" />
@@ -1913,11 +1893,11 @@
         <ctl name="DMIC MUX7" value="DMIC0" />
         <ctl name="SLIM TX8 MUX" value="DEC8" />
         <ctl name="ADC MUX8" value="DMIC" />
-        <ctl name="DMIC MUX8" value="DMIC1" />
+        <ctl name="DMIC MUX8" value="DMIC3" />
         <ctl name="SLIM TX6 MUX" value="DEC6" />
         <ctl name="ADC MUX6" value="DMIC" />
         <ctl name="DMIC MUX6" value="DMIC2" />
-        <ctl name="IIR0 INP0 MUX" value="DEC6" />
+        <ctl name="IIR0 INP0 MUX" value="DEC7" />
     </path>
 
     <path name="aanc-fluence-dmic-handset">
