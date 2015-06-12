@@ -1104,6 +1104,10 @@
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
+    <path name="aanc-fluence-dmic-handset">
+        <path name="aanc-handset-mic" />
+    </path>
+
     <!-- Dual MIC devices -->
     <path name="speaker-dmic-endfire">
         <ctl name="AIF1_CAP Mixer SLIM TX1" value="1" />
