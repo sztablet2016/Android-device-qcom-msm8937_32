@@ -1220,9 +1220,9 @@
     </path>
 
     <path name="hfp-sco">
-        <ctl name="HFP_AUX_UL_HL Switch" value="1" />
+        <ctl name="HFP_INT_UL_HL Switch" value="1" />
         <ctl name="SLIMBUS_0_RX Port Mixer INTERNAL_BT_SCO_TX" value="1" />
-        <ctl name="INTERNAL_BT_SCO_RX  Audio Mixer MultiMedia6" value="1" />
+        <ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia6" value="1" />
         <ctl name="MultiMedia6 Mixer SLIM_0_TX" value="1" />
         <ctl name="SLIMBUS_DL_HL Switch" value="1" />
    </path>
