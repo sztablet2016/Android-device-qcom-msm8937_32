@@ -179,6 +179,7 @@ on charger
     start vm_bms
     load_all_props
     start qcom-post-boot
+    setprop persist.sys.usb.config mass_storage
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
