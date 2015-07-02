@@ -19,6 +19,8 @@ PRODUCT_COPY_FILES += device/qcom/msm8952_32/media/media_profiles_8952.xml:syste
                       device/qcom/msm8952_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
 endif
 
+PRODUCT_COPY_FILES += device/qcom/msm8952_32/whitelistedapps.xml:system/etc/whitelistedapps.xml
+
 PRODUCT_PROPERTY_OVERRIDES += \
        dalvik.vm.heapgrowthlimit=128m \
        dalvik.vm.heapminfree=6m \
