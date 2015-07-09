@@ -197,7 +197,6 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.qcom.audio.decoder.ape" type="audio/x-ape" >
         </MediaCodec>
         <!-- Audio Software  -->
-        <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.qcom.audio.decoder.Qcelp13" type="audio/qcelp" >
             <Quirk name="requires-global-flush" />
         </MediaCodec>
