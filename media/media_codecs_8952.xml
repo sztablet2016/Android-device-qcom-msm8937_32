@@ -170,7 +170,6 @@ _________________________________________________________________
         <!-- Audio Hardware  -->
         <!-- Audio Software  -->
         <MediaCodec name="OMX.qti.audio.decoder.flac" type="audio/flac" />
-        <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
         <!-- Video Hardware  -->
         <MediaCodec name="OMX.qcom.video.decoder.avc" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
