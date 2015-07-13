@@ -19,6 +19,8 @@ PRODUCT_COPY_FILES += device/qcom/msm8952_32/media/media_profiles_8952.xml:syste
                       device/qcom/msm8952_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
 endif
 
+PRODUCT_COPY_FILES += device/qcom/msm8952_32/whitelistedapps.xml:system/etc/whitelistedapps.xml
+
 PRODUCT_PROPERTY_OVERRIDES += \
        dalvik.vm.heapgrowthlimit=128m \
        dalvik.vm.heapminfree=6m \
@@ -37,13 +39,14 @@ ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
 endif
 endif
 
-PRODUCT_BOOT_JARS += \
-           qcmediaplayer \
-           WfdCommon \
-           oem-services \
-           qcom.fmradio \
-           org.codeaurora.Performance \
-           tcmiface
+PRODUCT_BOOT_JARS += qcmediaplayer \
+                     vcard \
+                     tcmiface
+ifneq ($(strip $(QCPATH)),)
+    PRODUCT_BOOT_JARS += qcom.fmradio
+    PRODUCT_BOOT_JARS += WfdCommon
+    PRODUCT_BOOT_JARS += oem-services
+endif
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
@@ -64,6 +67,7 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8952_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
     device/qcom/msm8952_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
     device/qcom/msm8952_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
+    device/qcom/msm8952_32/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
     device/qcom/msm8952_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     device/qcom/msm8952_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml
 

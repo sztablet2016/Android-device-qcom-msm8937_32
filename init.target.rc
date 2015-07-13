@@ -172,13 +172,10 @@ service wcnss-service /system/bin/wcnss_service
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    chown root system /sys/class/power_supply/bms/current_now
-    chown root system /sys/class/power_supply/bms/voltage_ocv
-    chmod 0664 /sys/class/power_supply/bms/current_now
-    chmod 0664 /sys/class/power_supply/bms/voltage_ocv
-    start vm_bms
     load_all_props
+    setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
+    setprop persist.sys.usb.config mass_storage
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
@@ -237,3 +234,7 @@ service per_mgr /system/bin/pm-service
     class core
     user system
     group system net_raw
+
+on boot
+    write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img
+    write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/update_fw 1
