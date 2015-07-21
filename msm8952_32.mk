@@ -41,7 +41,8 @@ endif
 
 PRODUCT_BOOT_JARS += qcmediaplayer \
                      vcard \
-                     tcmiface
+                     tcmiface\
+                     com.qti.dpmframework
 ifneq ($(strip $(QCPATH)),)
     PRODUCT_BOOT_JARS += qcom.fmradio
     PRODUCT_BOOT_JARS += WfdCommon
