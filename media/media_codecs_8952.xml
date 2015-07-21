@@ -108,6 +108,7 @@
             <Limit name="bitrate" range="1-50000000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
+        <MediaCodec name="OMX.qti.audio.decoder.flac" type="audio/flac" />
     </Decoders>
     <Include href="media_codecs_google_video.xml" />
 </MediaCodecs>
