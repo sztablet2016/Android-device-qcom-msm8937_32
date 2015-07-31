@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
+<!-- Copyright (C) 2013 The Android Open Source Project
      Copyright (C) 2015 The Linux Foundation. All rights reserved.
      Not a contribution.
 
@@ -334,6 +334,62 @@
              bitRate="156000"
              sampleRate="48000"
              channels="2" />
+    </EncoderProfile>
+
+    <!-- HIGH-SPEED profiles for back camera -->
+
+    <EncoderProfile quality="highspeedcif" fileFormat="mp4" duration="30">
+        <Video codec="h264"
+         bitRate="720000"
+               width="352"
+               height="288"
+               frameRate="240" />
+
+      <!-- audio setting is ignored -->
+      <Audio codec="amrnb"
+             bitRate="12200"
+             sampleRate="8000"
+             channels="1" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="highspeedvga" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="2000000"
+             width="640"
+             height="480"
+             frameRate="120" />
+
+      <!-- audio setting is ignored -->
+      <Audio codec="amrnb"
+             bitRate="12200"
+             sampleRate="8000"
+             channels="1" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="highspeed480p" fileFormat="mp4" duration="30">
+        <Video codec="h264"
+             bitRate="2000000"
+             width="640"
+             height="480"
+             frameRate="120" />
+        <!-- audio setting is ignored -->
+        <Audio codec="aac"
+         bitRate="156000"
+         sampleRate="48000"
+         channels="2" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="highspeed720p" fileFormat="mp4" duration="30">
+        <Video codec="h264"
+         bitRate="14000000"
+               width="1280"
+               height="720"
+               frameRate="60" />
+        <!-- audio setting is ignored -->
+        <Audio codec="aac"
+         bitRate="156000"
+         sampleRate="48000"
+         channels="2" />
     </EncoderProfile>
 
         <ImageEncoding quality="95" />
