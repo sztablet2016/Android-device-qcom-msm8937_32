@@ -20,11 +20,13 @@
 ifeq ($(TARGET_ARCH),)
 TARGET_ARCH := arm
 endif
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 BOARD_USES_GENERIC_AUDIO := true
 
 -include $(QCPATH)/common/msm8952_32/BoardConfigVendor.mk
 TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_KERNEL_APPEND_DTB := true
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
 # to get rid of compilation error.
 TARGET_HAVE_HDMI_OUT := false
@@ -34,6 +36,8 @@ TARGET_NO_BOOTLOADER := false
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_RPC := true
+BOOTLOADER_GCC_VERSION := arm-eabi-4.8
+BOOTLOADER_PLATFORM := msm8952# use msm8952 LK configuration
 
 # Enables CSVT
 TARGET_USES_CSVT := true
@@ -55,9 +59,10 @@ BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
+TARGET_USES_UNCOMPRESSED_KERNEL := false
 
 # Enables Adreno RS driver
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+#OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -75,8 +80,8 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
-
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
+TARGET_USES_AOSP := true
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
 BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_EGL_CFG := device/qcom/msm8952_32/egl.cfg
@@ -94,11 +99,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 ADD_RADIO_FILES ?= true
 
 # Added to indicate that protobuf-c is supported in this build
-PROTOBUF_SUPPORTED := true
-
+PROTOBUF_SUPPORTED := false
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
-TARGET_USES_QCOM_BSP := true
+TARGET_USES_QCOM_BSP := false
 
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -116,7 +120,7 @@ MALLOC_IMPL := dlmalloc
 TARGET_LDPRELOAD := libNimsWrap.so
 
 #Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
@@ -131,6 +135,7 @@ ifneq ($(TARGET_USES_AOSP),true)
   ifeq ($(HOST_OS),linux)
     ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_PIC := true
       ifneq ($(TARGET_BUILD_VARIANT),user)
         # Retain classes.dex in APK's for non-user builds
         DEX_PREOPT_DEFAULT := nostripping
