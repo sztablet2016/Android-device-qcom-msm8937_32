@@ -196,6 +196,11 @@
     <ctl name="MultiMedia5 Mixer INTERNAL_FM_TX" value="0" />
     <!-- fm end -->
 
+    <!-- RT Proxy Cal -->
+    <ctl name="RT_PROXY_1_RX SetCalMode" value="CAL_MODE_NONE" />
+    <ctl name="RT_PROXY_1_TX SetCalMode" value="CAL_MODE_NONE" />
+    <!-- RT Proxy Cal end -->
+
     <!-- Voice -->
     <ctl name="SLIM_0_RX_Voice Mixer CSVoice" value="0" />
     <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="0" />
