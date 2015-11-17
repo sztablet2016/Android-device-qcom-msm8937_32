@@ -125,6 +125,9 @@ TARGET_HW_DISK_ENCRYPTION := false
 #Enable SSC Feature
 TARGET_USES_SSC := true
 
+#Enabling IMS Feature
+TARGET_USES_IMS := TRUE
+
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
