@@ -138,6 +138,10 @@ audio.offload.gapless.enabled=true
 #multi offload
 audio.offload.multiple.enabled=false
 
+#enable software decoders for ALAC and APE.
+use.qti.sw.alac.decoder=true
+use.qti.sw.ape.decoder=true
+
 #enable pbe effects
 audio.safx.pbe.enabled=true
 #property for AudioSphere Post processing
