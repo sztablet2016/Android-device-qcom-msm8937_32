@@ -22,9 +22,9 @@ endif
 PRODUCT_COPY_FILES += device/qcom/msm8937_32/whitelistedapps.xml:system/etc/whitelistedapps.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
-       dalvik.vm.heapgrowthlimit=128m \
        dalvik.vm.heapminfree=6m \
        dalvik.vm.heapstartsize=14m
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, device/qcom/common/common.mk)
 
 PRODUCT_NAME := msm8937_32
