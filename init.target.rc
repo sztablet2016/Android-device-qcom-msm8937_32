@@ -39,7 +39,8 @@ on post-fs
     export LD_PRELOAD libNimsWrap.so
 
 on fs
-    wait /dev/block/bootdevice
+    wait /dev/block/platform/soc.0/7824900.sdhci/mmcblk0
+    symlink /dev/block/platform/soc.0/7824900.sdhci /dev/block/bootdevice
     mount_all fstab.qcom
 
     # Keeping following partitions outside fstab file. As user may not have
