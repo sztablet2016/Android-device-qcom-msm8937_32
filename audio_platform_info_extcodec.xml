@@ -47,9 +47,14 @@
         <usecase name="USECASE_VOICEMMODE1_CALL" type="out" id="35"/>
         <usecase name="USECASE_VOICEMMODE2_CALL" type="in" id="36"/>
         <usecase name="USECASE_VOICEMMODE2_CALL" type="out" id="36"/>
+        <usecase name="USECASE_AUDIO_SPKR_CALIB_TX" type="in" id="37"/>
     </pcm_ids>
     <native_configs>
         <feature name="NATIVE_AUDIO_44.1" codec_support="1"/>
     </native_configs>
+    <config_params>
+        <param key="spkr_1_tz_name" value="wsatz.11"/>
+        <param key="spkr_2_tz_name" value="wsatz.12"/>
+    </config_params>
 </audio_platform_info>
 

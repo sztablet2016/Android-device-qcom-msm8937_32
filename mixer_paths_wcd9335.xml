@@ -87,19 +87,19 @@
     <ctl name="MultiMedia1 Mixer SLIM_0_TX" value="0" />
     <ctl name="MultiMedia1 Mixer SLIM_4_TX" value="0" />
     <ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia5" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia7" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia10" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia11" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia12" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia13" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia14" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia15" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia16" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia1" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia2" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia3" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia4" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia7" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia10" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia11" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia12" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia13" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia14" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia15" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia16" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia2" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia3" value="0" />
@@ -271,6 +271,7 @@
     <ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
     <!-- usb headset -->
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
+    <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia3" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia7" value="0" />
@@ -537,7 +538,7 @@
     </path>
 
     <path name="deep-buffer-playback hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
     <path name="deep-buffer-playback speaker-and-hdmi">
@@ -585,7 +586,7 @@
     </path>
 
     <path name="low-latency-playback hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="low-latency-playback bt-sco">
@@ -629,7 +630,7 @@
     </path>
 
     <path name="multi-channel-playback hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia2" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia2" value="1" />
     </path>
 
     <path name="multi-channel-playback afe-proxy">
@@ -661,6 +662,15 @@
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia3" value="1" />
     </path>
 
+    <path name="audio-ull-playback hdmi">
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia3" value="1" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-hdmi">
+        <path name="audio-ull-playback hdmi" />
+        <path name="audio-ull-playback" />
+    </path>
+
     <path name="audio-ull-playback usb-headphones">
         <path name="audio-ull-playback afe-proxy" />
     </path>
@@ -679,7 +689,7 @@
     </path>
 
     <path name="compress-offload-playback hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia4" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
     <path name="compress-offload-playback bt-sco">
@@ -723,7 +733,7 @@
     </path>
 
     <path name="compress-offload-playback2 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia7" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia7" value="1" />
     </path>
 
     <path name="compress-offload-playback2 bt-sco">
@@ -771,7 +781,7 @@
     </path>
 
     <path name="compress-offload-playback3 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia10" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia10" value="1" />
     </path>
 
     <path name="compress-offload-playback3 bt-sco">
@@ -947,7 +957,7 @@
     </path>
 
     <path name="compress-offload-playback7 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia14" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
     <path name="compress-offload-playback7 bt-sco">
@@ -991,7 +1001,7 @@
     </path>
 
     <path name="compress-offload-playback8 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia15" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia15" value="1" />
     </path>
 
     <path name="compress-offload-playback8 bt-sco">
@@ -1035,7 +1045,7 @@
     </path>
 
     <path name="compress-offload-playback9 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia16" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
     <path name="compress-offload-playback9 bt-sco">
