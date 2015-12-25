@@ -150,3 +150,5 @@ ifneq ($(TARGET_USES_AOSP),true)
     endif
   endif
 endif
+
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
