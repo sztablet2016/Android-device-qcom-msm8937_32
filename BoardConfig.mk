@@ -120,7 +120,8 @@ MALLOC_IMPL := dlmalloc
 TARGET_LDPRELOAD := libNimsWrap.so
 
 #Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := false
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 #Enable SSC Feature
 TARGET_USES_SSC := true
@@ -149,3 +150,5 @@ ifneq ($(TARGET_USES_AOSP),true)
     endif
   endif
 endif
+
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
