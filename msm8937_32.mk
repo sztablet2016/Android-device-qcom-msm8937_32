@@ -77,6 +77,9 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8937_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     device/qcom/msm8937_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml
 
+#Android EGL implementation
+PRODUCT_PACKAGES += libGLES_android
+
 # ANT+ stack
 PRODUCT_PACKAGES += \
     AntHalService \
