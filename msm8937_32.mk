@@ -47,6 +47,7 @@ ifneq ($(strip $(QCPATH)),)
     PRODUCT_BOOT_JARS += oem-services
     PRODUCT_BOOT_JARS += tcmiface
     PRODUCT_BOOT_JARS += dpmapi
+    PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
 
 # Audio configuration file
@@ -75,6 +76,9 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8937_32/mixer_paths_qrd_sku2.xml:system/etc/mixer_paths_qrd_sku2.xml \
     device/qcom/msm8937_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     device/qcom/msm8937_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml
+
+#Android EGL implementation
+PRODUCT_PACKAGES += libGLES_android
 
 # ANT+ stack
 PRODUCT_PACKAGES += \
