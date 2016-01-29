@@ -190,6 +190,7 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
     setprop persist.sys.usb.config mass_storage
+    start hvdcp_opti
 
 service imsstarter /system/bin/sh /system/etc/init.qti.ims.sh
     class main
@@ -265,6 +266,11 @@ service per_mgr /system/bin/pm-service
     class core
     user system
     group system net_raw
+
+service hvdcp_opti /system/bin/hvdcp_opti
+    class main
+    user root
+    group root
 
 on boot
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img
