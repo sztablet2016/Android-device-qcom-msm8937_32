@@ -4,7 +4,7 @@ TARGET_USES_QCOM_BSP := true
 
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_NQ_NFC := false
+TARGET_USES_NQ_NFC := true
 
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
@@ -14,7 +14,8 @@ ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/qcom/msm8937_32/media/media_profiles_8937.xml:system/etc/media_profiles.xml \
                       device/qcom/msm8937_32/media/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
                       device/qcom/msm8937_32/media/media_codecs_8937.xml:system/etc/media_codecs.xml \
-                      device/qcom/msm8937_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
+                      device/qcom/msm8937_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml \
+                      device/qcom/msm8937_32/media/media_codecs_performance_8937.xml:system/etc/media_codecs_performance.xml
 endif
 
 PRODUCT_COPY_FILES += device/qcom/msm8937_32/whitelistedapps.xml:system/etc/whitelistedapps.xml
@@ -64,6 +65,7 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8937_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
     device/qcom/msm8937_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
     device/qcom/msm8937_32/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
+    device/qcom/msm8937_32/sound_trigger_mixer_paths_wcd9335.xml:system/etc/sound_trigger_mixer_paths_wcd9335.xml \
     device/qcom/msm8937_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
     device/qcom/msm8937_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
     device/qcom/msm8937_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
