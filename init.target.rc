@@ -39,8 +39,7 @@ on post-fs
     export LD_PRELOAD libNimsWrap.so
 
 on fs
-    wait /dev/block/platform/soc.0/7824900.sdhci/mmcblk0
-    symlink /dev/block/platform/soc.0/7824900.sdhci /dev/block/bootdevice
+    wait /dev/block/bootdevice
     mount_all fstab.qcom
 
     # Keeping following partitions outside fstab file. As user may not have
@@ -165,7 +164,7 @@ on boot
     chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch_enable
     chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch
 
-service ppd /system/bin/mm-pp-dpps
+service ppd /system/vendor/bin/mm-pp-dpps
     class late_start
     disabled
     user system
@@ -177,6 +176,18 @@ on property:init.svc.surfaceflinger=stopped
 
 on property:init.svc.surfaceflinger=running
     start ppd
+
+on property:init.svc.surfaceflinger=restarting
+    stop ppd
+
+on property:init.svc.zygote=stopped
+    stop ppd
+
+on property:init.svc.zygote=running
+    start ppd
+
+on property:init.svc.zygote=restarting
+    stop ppd
 
 service wcnss-service /system/bin/wcnss_service
     class main
@@ -191,6 +202,7 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
     setprop persist.sys.usb.config mass_storage
+    start hvdcp_opti
 
 service imsstarter /system/bin/sh /system/etc/init.qti.ims.sh
     class main
@@ -266,6 +278,11 @@ service per_mgr /system/bin/pm-service
     class core
     user system
     group system net_raw
+
+service hvdcp_opti /system/bin/hvdcp_opti
+    class main
+    user root
+    group root
 
 on boot
     write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img
